@@ -6,4 +6,5 @@
     <string name="button_remove_drink">Remove drink</string>
     <string name="button_calculate">Calculate</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_display_message">Test message</string>
 </resources>

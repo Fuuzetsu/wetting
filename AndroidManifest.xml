@@ -11,5 +11,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="uk.co.fuuzetsu.wetting.DisplayMessageActivity"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName="uk.co.fuuzets.wetting.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="uk.co.fuuzetsu.wetting.MainActivity" />
+        </activity>
     </application>
 </manifest>
