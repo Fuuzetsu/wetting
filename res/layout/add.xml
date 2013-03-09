@@ -54,7 +54,7 @@
         android:gravity="center"
         >
 
-        <Checkbox
+        <CheckBox
             android:id="@+id/fizzyCheckbox"
             />
 
