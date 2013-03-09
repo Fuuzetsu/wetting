@@ -14,7 +14,7 @@ The application should do the following if time allows:
 
 
 There will be 5 main screens:
-Menu screen - This screen will have 3 buttons: Show day, Add drink, Remove drink,  Generate information, Exit. This is the starting screen of the application.
+Menu screen - This screen will have 4 buttons: Show day, Add drink, Remove drink,  Generate information, Exit. This is the starting screen of the application.
  Show day - goes to Day screen
  Add drink - goes to Addition screen
  Remove drink - goes to Removal screen
