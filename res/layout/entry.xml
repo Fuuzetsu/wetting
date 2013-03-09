@@ -12,7 +12,8 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center"
+        android:gravity="center|top"
+        android:layout_weight="1"
         >
 
         <TextView
@@ -32,19 +33,30 @@
             android:layout_height="wrap_content"
             android:src="@drawable/plus"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dip"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_weight="1"
+            android:layout_weight="2"
             />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/ButtonTest"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:text="placeholder"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        />
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center"
+        android:gravity="center|bottom"
+        android:layout_weight="1"
         >
 
         <CheckBox
