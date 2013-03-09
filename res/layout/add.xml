@@ -16,7 +16,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginTop="10dip"
-
+        android:layout_weight="1"
         />
 
     <EditText
@@ -26,6 +26,7 @@
         android:hint="@string/add_drink_hint"
         android:layout_centerHorizontal="true"
         android:textSize="15sp"
+        android:layout_weight="1"
         />
 
     <TextView
@@ -36,6 +37,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:layout_weight="1"
         />
 
     <Spinner
@@ -44,14 +46,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textSize="15sp"
+        android:layout_weight="1"
         />
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_weight="1"
         >
 
         <CheckBox
@@ -75,5 +79,16 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/buttonSaveDrink"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_save"
+        android:layout_marginTop="10dip"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_gravity="center|bottom"
+        android:layout_weight="1"
+        />
 
 </LinearLayout>
