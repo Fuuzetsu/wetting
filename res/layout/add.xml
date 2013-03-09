@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/drinkNameLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/drink_name_label"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dip"
+
+        />
+
+    <EditText
+        android:id="@+id/newDrinkTextbox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_drink_hint"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/oldDrinkNameLabell"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/old_drink_name_label"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+    <Spinner
+        android:id="@+id/oldDrinkSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        />
+
+</LinearLayout>
