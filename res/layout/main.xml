@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/ButtonShowDay"
         android:layout_width="188dip"
-        android:layout_height="50dip"
+        android:layout_height="wrap_content"
         android:text="@string/button_show_day"
         android:layout_centerHorizontal="true"
         android:textSize="25sp"
@@ -21,7 +21,7 @@
     <Button
         android:id="@+id/ButtonAddDrink"
         android:layout_width="188dip"
-        android:layout_height="50dip"
+        android:layout_height="wrap_content"
         android:text="@string/button_add_drink"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dip"
@@ -33,7 +33,7 @@
     <Button
         android:id="@+id/ButtonRemoveDrink"
         android:layout_width="188dip"
-        android:layout_height="50dip"
+        android:layout_height="wrap_content"
         android:text="@string/button_remove_drink"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dip"
@@ -45,7 +45,7 @@
     <Button
         android:id="@+id/ButtonCalculate"
         android:layout_width="188dip"
-        android:layout_height="50dip"
+        android:layout_height="wrap_content"
         android:text="@string/button_calculate"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dip"
