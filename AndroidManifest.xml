@@ -19,5 +19,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uk.co.fuuzetsu.wetting.MainActivity" />
         </activity>
+        <activity
+            android:name="uk.co.fuuzetsu.wetting.EntryActivity"
+            android:label="@string/title_activity_entry"
+            android:parentActivityName="uk.co.fuuzets.wetting.EntryActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="uk.co.fuuzetsu.wetting.EntryActivity" />
+        </activity>
     </application>
 </manifest>
