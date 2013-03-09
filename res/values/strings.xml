@@ -10,4 +10,5 @@
     <string name="drink_name_label">Drink name</string>
     <string name="old_drink_name_label">Recover deleted drink</string>
     <string name="add_drink_hint">Enter a drink name</string>
+    <string name="fizzy_text_label">This drink is fizzy</string>
 </resources>
