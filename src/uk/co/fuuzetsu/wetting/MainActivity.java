@@ -32,4 +32,9 @@ public class MainActivity extends Activity
 		startActivity(intent);
 	}
 
+	public void changeToEntry(View view) {
+		Intent intent = new Intent(this, EntryActivity.class);
+		startActivity(intent);
+	}
+
 }
