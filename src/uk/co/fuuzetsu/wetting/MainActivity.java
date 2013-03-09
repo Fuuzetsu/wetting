@@ -9,6 +9,8 @@ import android.widget.*;
 
 public class MainActivity extends Activity
 {
+
+	public static final String EXTRA_MESSAGE = "MAIN_MSG";
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -20,7 +22,7 @@ public class MainActivity extends Activity
 	public void showDayButtonMessage(View view) {
 		Intent intent = new Intent(this, DisplayMessageActivity.class);
 		String message = "Activated Show day button";
-		intent.putExtra("message", message);
+		intent.putExtra(MainActivity.EXTRA_MESSAGE, message);
 		startActivity(intent);
 	}
 }

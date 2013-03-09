@@ -11,7 +11,16 @@ public class DisplayMessageActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message);
+
+		Intent intent = getIntent();
+		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+		// Create the text view
+		TextView textView = new TextView(this);
+		textView.setTextSize(40);
+		textView.setText(message);
+
+		setContentView(textView);
 
         // Make sure we're running on Honeycomb or higher to use ActionBar APIs
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -19,14 +28,4 @@ public class DisplayMessageActivity extends Activity {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
-
-    // @Override
-    // public boolean onOptionsItemSelected(MenuItem item) {
-    //     switch (item.getItemId()) {
-    //     case android.R.id.home:
-    //         NavUtils.navigateUpFromSameTask(this);
-    //         return true;
-    //     }
-    //     return super.onOptionsItemSelected(item);
-    // }
 }
