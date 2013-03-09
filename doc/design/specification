@@ -1,0 +1,35 @@
+This Android application will aim to track the user's drinks throughout the day, their trips to the toilet and whether they have wet the bed that night. 
+
+The user will be able to log the time of their entries. This will then be used later as part of the analysis to try and infer the drinks the user should avoid.
+
+The user has to be able to:
+- add drinks
+- add trips to the toilet
+- track whether they have wet the bed that night
+
+All drinks will have to be added before addition to ensure consistency and make the analysis possible. The application will do its best to determine what drinks should be avoided based on the data collected by the user. 
+
+The application should do the following if time allows:
+- calculate the size of the user's bladder based on their history of toilet trips
+
+
+There will be 5 main screens:
+Menu screen - This screen will have 3 buttons: Show day, Add drink, Remove drink,  Generate information, Exit. This is the starting screen of the application.
+ Show day - goes to Day screen
+ Add drink - goes to Addition screen
+ Remove drink - goes to Removal screen
+ Generate information - goes to Calculation screen
+
+Day screen - This screen will show all the users entries for that day. From this screen, the user will be able to get onto 3 screens. There will be a 3 buttons on the screen: Add drink and Add entry.
+ Add entry - Takes user to Entry screen
+ Add drink - Takes user to Addition screen
+ Mark wetted - Marks the day as the day that the user has wet the bed
+In addition, swiping left or right will go a day backwards and forwards respectively. The current date will be displayed at all times on this screen. Pressing on a current entry will prompt the user for the record's deletion. 
+
+Addition screen - This screen will allow the user to add a new drink to the database. The only way a drink at the Entry screen will be to have added it here beforehand. Toilet trips will be predefined already and don't have to be added. If a user has removed a drink in the past, there will be an option to pick it from a list here. There will be a checkbox determining whether the drink is fizzy.
+
+Removal screen - This screen will allow the user to remove a previously added drink. This drink will not disappear from the past entries once removed but will no longer be possible for entry on the Entry screen. Toilet trips can't be removed. 
+
+Entry screen - This screen will allow a user to pick a drink out of a drop-down list or add a toilet trip. The user will be able to change the time of the entry which will default to the current time. The drink has to be added on the Addition screen beforehand.
+
+Calculation screen - This screen will prompt the user for two dates and will display information about the user's wetting pattern within the given period. This defaults to the first entry in the diary and the last antry on the previous day. The information displayed depends on what the time allows. Some criteria that will be taken into the consideration is the amount of times the user has gone to the toilet in a day, whether the user has gone to the toilet before bed, whether the drinks were fizzy and so on.
