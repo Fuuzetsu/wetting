@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/ButtonShowDay"
-        android:layout_width="188dip"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_show_day"
         android:layout_centerHorizontal="true"
@@ -20,7 +20,7 @@
 
     <Button
         android:id="@+id/ButtonAddDrink"
-        android:layout_width="188dip"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_add_drink"
         android:layout_centerHorizontal="true"
@@ -32,7 +32,7 @@
 
     <Button
         android:id="@+id/ButtonRemoveDrink"
-        android:layout_width="188dip"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_remove_drink"
         android:layout_centerHorizontal="true"
@@ -44,7 +44,7 @@
 
     <Button
         android:id="@+id/ButtonCalculate"
-        android:layout_width="188dip"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_calculate"
         android:layout_centerHorizontal="true"
