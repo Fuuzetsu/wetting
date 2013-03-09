@@ -1,6 +1,13 @@
+package uk.co.fuuzetsu.wetting;
+
+import android.app.*;
+import android.content.*;
+import android.os.*;
+import android.view.*;
+import android.widget.*;
+
 public class DisplayMessageActivity extends Activity {
 
-    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -13,13 +20,13 @@ public class DisplayMessageActivity extends Activity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-        case android.R.id.home:
-            NavUtils.navigateUpFromSameTask(this);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    // @Override
+    // public boolean onOptionsItemSelected(MenuItem item) {
+    //     switch (item.getItemId()) {
+    //     case android.R.id.home:
+    //         NavUtils.navigateUpFromSameTask(this);
+    //         return true;
+    //     }
+    //     return super.onOptionsItemSelected(item);
+    // }
 }
