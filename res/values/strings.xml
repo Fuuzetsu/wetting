@@ -15,5 +15,7 @@
     <string name="fizzy_text_label">This drink is fizzy</string>
     <string name="button_save">Save</string>
     <string name="title_activity_entry">EntryActivity</string>
+    <string name="button_delete">Delete</string>
+    <string name="pick_drink_name_label">Pick a drink to delete</string>
     <string name="wet_text">Wet the bed</string>
 </resources>
