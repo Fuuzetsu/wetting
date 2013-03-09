@@ -7,6 +7,7 @@
     <string name="button_calculate">Calculate</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_display_message">Test message</string>
+    <string name="title_activity_add_message">Add drink</string>
     <string name="drink_name_label">Drink name</string>
     <string name="old_drink_name_label">Recover deleted drink</string>
     <string name="add_drink_hint">Enter a drink name</string>

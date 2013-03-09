@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name="uk.co.fuuzetsu.wetting.AddActivity"
-            android:label="@string/title_activity_display_message"
+            android:label="@string/title_activity_add_message"
             android:parentActivityName="uk.co.fuuzets.wetting.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
