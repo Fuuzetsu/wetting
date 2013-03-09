@@ -12,7 +12,7 @@
         android:layout_height="100dip"
         android:text="@string/button_show_day"
         android:layout_centerInParent="true"
-        android:textSize="48sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_weight="1"
         />
@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/ButtonShowDay"
         android:layout_marginTop="30dip"
-        android:textSize="48sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_weight="1"
         />
@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/ButtonAddDrink"
         android:layout_marginTop="30dip"
-        android:textSize="48sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_weight="1"
         />
@@ -51,7 +51,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/ButtonRemoveDrink"
         android:layout_marginTop="30dip"
-        android:textSize="48sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_weight="1"
         />
