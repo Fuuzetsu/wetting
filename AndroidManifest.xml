@@ -28,6 +28,14 @@
                 android:value="uk.co.fuuzetsu.wetting.AddActivity" />
         </activity>
         <activity
+            android:name="uk.co.fuuzetsu.wetting.RemoveActivity"
+            android:label="@string/title_activity_remove_message"
+            android:parentActivityName="uk.co.fuuzets.wetting.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="uk.co.fuuzetsu.wetting.RemoveActivity" />
+        </activity>
+        <activity
             android:name="uk.co.fuuzetsu.wetting.EntryActivity"
             android:label="@string/title_activity_entry"
             android:parentActivityName="uk.co.fuuzets.wetting.EntryActivity" >
