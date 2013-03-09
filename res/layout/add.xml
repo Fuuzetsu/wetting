@@ -56,18 +56,21 @@
 
         <CheckBox
             android:id="@+id/fizzyCheckbox"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             />
 
-            <TextView
-                android:id="@+id/fizzyLabel"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fizzy_text_label"
-                android:layout_centerHorizontal="true"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                />
+        <TextView
+            android:id="@+id/fizzyLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fizzy_text_label"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
     </LinearLayout>
 
 </LinearLayout>
