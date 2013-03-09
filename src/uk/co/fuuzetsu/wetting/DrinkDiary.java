@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DrinkDiary {
 
-	Map<Date, String> = activities;
+	Map<Date, String> activities;
 
 	public DrinkDiary() {
 		this.activities = new HashMap<Date, String>();
