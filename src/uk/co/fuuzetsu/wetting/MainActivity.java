@@ -25,4 +25,9 @@ public class MainActivity extends Activity
 		intent.putExtra(MainActivity.EXTRA_MESSAGE, message);
 		startActivity(intent);
 	}
+
+	public void changeToEntry(View view) {
+		Intent intent = new Intent(this, EntryActivity.class);
+		startActivity(intent);
+	}
 }
