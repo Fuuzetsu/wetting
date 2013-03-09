@@ -8,4 +8,5 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_display_message">Test message</string>
     <string name="title_activity_entry">EntryActivity</string>
+    <string name="wet_text">Wet the bed</string>
 </resources>

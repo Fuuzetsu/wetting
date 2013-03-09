@@ -39,4 +39,35 @@
             />
     </LinearLayout>
 
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        >
+
+        <CheckBox
+            android:id="@+id/wetBed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/wetLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="@string/wet_text"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
 </LinearLayout>
