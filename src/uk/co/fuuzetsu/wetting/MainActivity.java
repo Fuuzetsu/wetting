@@ -1,7 +1,11 @@
 package uk.co.fuuzetsu.wetting;
 
-import android.app.Activity;
-import android.os.Bundle;
+import android.app.*;
+import android.content.*;
+import android.os.*;
+import android.view.*;
+import android.widget.*;
+
 
 public class MainActivity extends Activity
 {
@@ -12,4 +16,11 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
     }
+
+	public void showDayButtonMessage(View view) {
+		Intent intent = new Intent(this, DisplayMessageActivity.class);
+		String message = "Activated Show day button";
+		intent.putExtra("message", message);
+		startActivity(intent);
+	}
 }
