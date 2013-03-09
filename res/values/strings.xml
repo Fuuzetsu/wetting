@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MainActivity</string>
+    <string name="app_name">WetCruncher</string>
+    <string name="button_show_day">Show day</string>
+    <string name="button_add_drink">Add drink</string>
+    <string name="button_remove_drink">Remove drink</string>
+    <string name="button_calculate">Calculate</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
