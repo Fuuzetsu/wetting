@@ -16,7 +16,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_weight="1"
-        android:onClick="showDayButtonMessage"
+        android:onClick="changeToEntry"
         />
 
     <Button
@@ -29,6 +29,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_weight="1"
+        android:onClick="showDayButtonMessage"
         />
 
     <Button
