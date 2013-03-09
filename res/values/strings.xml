@@ -7,4 +7,5 @@
     <string name="button_calculate">Calculate</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_display_message">Test message</string>
+    <string name="title_activity_entry">EntryActivity</string>
 </resources>
