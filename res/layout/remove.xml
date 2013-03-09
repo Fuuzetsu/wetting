@@ -5,6 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
+    android:padding="12dip"
     >
 
     <TextView
@@ -16,7 +17,6 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginTop="10dip"
-        android:layout_weight="1"
         />
 
     <Spinner
@@ -25,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textSize="15sp"
-        android:layout_weight="1"
         />
 
     <Button
@@ -36,8 +35,6 @@
         android:layout_marginTop="10dip"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_gravity="center|bottom"
-        android:layout_weight="1"
         />
 
 </LinearLayout>
