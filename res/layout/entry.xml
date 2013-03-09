@@ -24,11 +24,11 @@
             android:text="date-holder"
             />
 
-        <Button
+        <ImageButton
             android:id="@+id/ButtonPlus"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"
+            android:src="@drawable/plus"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dip"
             android:textSize="30sp"
