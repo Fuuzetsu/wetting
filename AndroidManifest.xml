@@ -14,7 +14,7 @@
         <activity
             android:name="uk.co.fuuzetsu.wetting.DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
-            android:parentActivityName="uk.co.fuuzets.wetting.MainActivity" >
+            android:parentActivityName="uk.co.fuuzetsu.wetting.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uk.co.fuuzetsu.wetting.DisplayMessageActivity" />
@@ -22,7 +22,7 @@
         <activity
             android:name="uk.co.fuuzetsu.wetting.AddActivity"
             android:label="@string/title_activity_add_message"
-            android:parentActivityName="uk.co.fuuzets.wetting.MainActivity" >
+            android:parentActivityName="uk.co.fuuzetsu.wetting.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uk.co.fuuzetsu.wetting.AddActivity" />
@@ -30,7 +30,7 @@
         <activity
             android:name="uk.co.fuuzetsu.wetting.RemoveActivity"
             android:label="@string/title_activity_remove_message"
-            android:parentActivityName="uk.co.fuuzets.wetting.MainActivity" >
+            android:parentActivityName="uk.co.fuuzetsu.wetting.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uk.co.fuuzetsu.wetting.RemoveActivity" />
@@ -38,7 +38,7 @@
         <activity
             android:name="uk.co.fuuzetsu.wetting.EntryActivity"
             android:label="@string/title_activity_entry"
-            android:parentActivityName="uk.co.fuuzets.wetting.EntryActivity" >
+            android:parentActivityName="uk.co.fuuzetsu.wetting.EntryActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uk.co.fuuzetsu.wetting.EntryActivity" />
