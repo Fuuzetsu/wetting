@@ -1,12 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/ButtonShowDay"
+        android:layout_width="188dip"
+        android:layout_height="100dip"
         android:text="@string/button_show_day"
+        android:layout_centerInParent="true"
+        android:textSize="48sp"
+        android:textStyle="bold"
         />
-</LinearLayout>
+
+    <Button
+        android:id="@+id/ButtonAddDrink"
+        android:layout_width="188dip"
+        android:layout_height="100dip"
+        android:text="@string/button_add_drink"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ButtonShowDay"
+        android:layout_marginTop="30dip"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/ButtonRemoveDrink"
+        android:layout_width="188dip"
+        android:layout_height="100dip"
+        android:text="@string/button_remove_drink"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ButtonAddDrink"
+        android:layout_marginTop="30dip"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/ButtonCalculate"
+        android:layout_width="188dip"
+        android:layout_height="100dip"
+        android:text="@string/button_calculate"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ButtonRemoveDrink"
+        android:layout_marginTop="30dip"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>
