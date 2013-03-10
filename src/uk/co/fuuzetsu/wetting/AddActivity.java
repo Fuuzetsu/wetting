@@ -73,8 +73,6 @@ public class AddActivity extends Activity {
 		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		final DrinkDiary diary = this.diary;
 
-		Long time = c.getTimeInMillis();
-
 		Either<Drink, Toilet> t = new Either<Drink, Toilet>(new Toilet());
 
 		saveValue(t);
