@@ -15,6 +15,8 @@ import android.widget.AdapterView.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import android.graphics.Rect;
+
 import com.google.gson.Gson;
 
 public class EntryActivity extends Activity {
@@ -28,9 +30,17 @@ public class EntryActivity extends Activity {
         setContentView(R.layout.entry);
 
         diary = loadDiary();
-        Calendar c = Calendar.getInstance();
-        Date time = new Date(c.getTimeInMillis());
-        changeDay(time);
+        changeDay(new Date(Calendar.getInstance().getTimeInMillis()));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.d(TAG, "onResume");
+
+        diary = loadDiary();
+        changeDay(new Date(Calendar.getInstance().getTimeInMillis()));
     }
 
     public void onButtonPlusClick(View v) {
@@ -38,7 +48,6 @@ public class EntryActivity extends Activity {
     }
 
     public void changeDay(Date time) {
-
         TextView tv = (TextView) findViewById(R.id.dateLabel);
 
         SimpleDateFormat df = new SimpleDateFormat("dd MMMM yyyy");
