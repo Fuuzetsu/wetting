@@ -89,6 +89,7 @@
         android:textStyle="bold"
         android:layout_gravity="center|bottom"
         android:layout_weight="1"
+        android:onClick="saveDrink"
         />
 
 </LinearLayout>

@@ -4,20 +4,51 @@ import android.app.*;
 import android.content.*;
 import android.util.*;
 import android.os.*;
+import android.preference.*;
 import android.text.*;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
 
+import com.google.gson.Gson;
+
+import java.util.*;
 
 public class AddActivity extends Activity {
 
 	private final String TAG = "AddActivity";
+	private final String KEY = "DIARY";
+	private DrinkDiary diary;
+	private List<String> drinks = new ArrayList<String>();
+
+	public void saveDrink(View view) {
+		return;
+	}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add);
+
+		/* Initialise diary, populate list */
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		String json = prefs.getString(KEY, "");
+		if (KEY.length() == 0) {
+			this.diary = DrinkDiary();
+		}
+		else {
+			Gson gson = new Gson();
+			this.diary = gson.fromJson(json, DrinkDiary.class);
+		}
+
+		for (Map.Entry<Date, String> entry : this.diary.getActivities().entrySet()) {
+			String drink = entry.getValue();
+			drinks.add(drink);
+		}
+		final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
+
+		ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_spinner_item, this.drinks);
+		drinkSpinner.setAdapter(adptr);
 
 		/* Disable the appropriate items */
 		final Button save = (Button) findViewById(R.id.buttonSaveDrink);
@@ -25,7 +56,7 @@ public class AddActivity extends Activity {
 		save.setEnabled(false);
 
 		final EditText drinkInput = (EditText) findViewById(R.id.newDrinkTextbox);
-		final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
+
 
 		Log.d(TAG, "In after last init");
 
