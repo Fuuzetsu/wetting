@@ -123,6 +123,10 @@ public class AddActivity extends Activity {
         Gson g = new Gson();
         String j = g.toJson(aoe);
 
+
+        drinks.add("test1");
+        drinks.add("test2");
+
         for (Map.Entry<Long, Either<Drink, Toilet>> entry : this.diary.getActivities().entrySet()) {
             Either<Drink, Toilet> v = entry.getValue();
 
@@ -133,8 +137,6 @@ public class AddActivity extends Activity {
 			}
         }
 
-        drinks.add("test1");
-        drinks.add("test2");
 
         final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
 
