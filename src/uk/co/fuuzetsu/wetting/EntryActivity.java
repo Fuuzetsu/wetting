@@ -44,7 +44,7 @@ public class EntryActivity extends Activity {
 		SimpleDateFormat df= new SimpleDateFormat("dd MMMM yyyy");
 		List<String> l = new ArrayList<String>();
 
-		for (Map.Entry<Long, Either<Drink, Toilet>> entry : d.entrySet()) {
+		for (Map.Entry<Long, Either<Drink, Toilet>> entry : d.getActivities().entrySet()) {
 			Long dt = entry.getKey();
 			String date = df.format(new Date(dt));
 			Either<Drink, Toilet> v = entry.getValue();
