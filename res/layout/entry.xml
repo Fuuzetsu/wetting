@@ -1,86 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center"
-    android:padding="12dip"
-    >
+    xmlns:a="http://schemas.android.com/apk/res/android"
+    a:orientation="vertical"
+    a:layout_width="fill_parent"
+    a:layout_height="fill_parent"
+    a:gravity="center"
+    a:padding="12dip">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
-        >
+        a:orientation="horizontal"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:gravity="center">
 
         <TextView
-            android:id="@+id/dateLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="date-holder"
-            />
+            a:id="@+id/dateLabel"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_weight="4"
+            a:textSize="30sp"
+            a:textStyle="bold"
+            a:gravity="center"
+            a:text="date-holder" />
 
         <ImageButton
-            android:id="@+id/ButtonPlus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/plus"
-            android:layout_centerHorizontal="true"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            />
+            a:id="@+id/ButtonPlus"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:src="@drawable/plus"
+            a:layout_centerHorizontal="true"
+            a:textSize="30sp"
+            a:textStyle="bold"
+            a:layout_weight="1" />
     </LinearLayout>
 
     <ListView
-        android:id="@+id/entryList"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerHorizontal="true"
-        android:text="placeholder"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_weight="1"
-        />
+        a:id="@+id/entryList"
+        a:layout_width="fill_parent"
+        a:layout_height="0px"
+        a:layout_centerHorizontal="true"
+        a:text="placeholder"
+        a:textSize="15sp"
+        a:textStyle="bold"
+        a:layout_weight="1" />
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
-        >
+        a:orientation="horizontal"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:gravity="center">
 
         <CheckBox
-            android:id="@+id/wetBed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dip"
-            android:layout_weight="1"
-            />
+            a:id="@+id/wetBed"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_centerHorizontal="true"
+            a:layout_marginTop="10dip"
+            a:layout_weight="1" />
 
         <TextView
-            android:id="@+id/wetLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:text="@string/wet_text"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            />
-
+            a:id="@+id/wetLabel"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_weight="4"
+            a:text="@string/wet_text"
+            a:textSize="30sp"
+            a:textStyle="bold"
+            a:gravity="center" />
     </LinearLayout>
-
-
 </LinearLayout>

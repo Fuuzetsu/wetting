@@ -27,7 +27,7 @@ public class EntryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entry);
 
-        this.diary = loadDiary();
+        diary = loadDiary();
         Calendar c = Calendar.getInstance();
         Date time = new Date(c.getTimeInMillis());
         changeDay(time);
