@@ -42,6 +42,10 @@ public class AddActivity extends Activity {
 
 	}
 
+	public void saveToilet(View view) {
+		Log.d(TAG, "pressed Toilet");
+	}
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -79,17 +79,38 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonSaveDrink"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_save"
-        android:layout_marginTop="10dip"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_gravity="center|bottom"
+        android:gravity="center"
         android:layout_weight="1"
-        android:onClick="saveDrink"
-        />
+        >
+
+        <Button
+            android:id="@+id/buttonSaveDrink"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_save"
+            android:layout_marginTop="10dip"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:onClick="saveDrink"
+            />
+
+        <Button
+            android:id="@+id/buttonToilet"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_toilet"
+            android:layout_marginTop="10dip"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:onClick="saveToilet"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>
