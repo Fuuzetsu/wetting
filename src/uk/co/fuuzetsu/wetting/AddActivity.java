@@ -73,28 +73,12 @@ public class AddActivity extends Activity {
 		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		final DrinkDiary diary = this.diary;
 
-		Calendar c = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		Long time = c.getTimeInMillis();
 		Log.d(TAG, sdf.format(time));
 
 		Either<Drink, Toilet> t = new Either<Drink, Toilet>(new Toilet());
-		diary.getActivities().put(time, t);
 
-		Thread th = new Thread() {
-				public void run() {
-					Gson g = new Gson();
-					Log.d(TAG, "starting serlisation");
-					String j = g.toJson(diary);
-					Log.d(TAG, j);
-					SharedPreferences.Editor editor = prefs.edit();
-					editor.putString(KEY, j);
-					editor.commit();
-
-					Log.d(TAG, "done editor commiting");
-				}
-			};
-		th.start();
+		saveValue(t);
 	}
 
     @Override
