@@ -74,7 +74,6 @@ public class AddActivity extends Activity {
 		final DrinkDiary diary = this.diary;
 
 		Long time = c.getTimeInMillis();
-		Log.d(TAG, sdf.format(time));
 
 		Either<Drink, Toilet> t = new Either<Drink, Toilet>(new Toilet());
 
