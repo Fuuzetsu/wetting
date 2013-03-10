@@ -57,18 +57,18 @@ public class EntryActivity extends Activity {
         List<String> entries = populateList(this.diary, time);
 
         ListView lv = (ListView) findViewById(R.id.entryList);
-        ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_list_item_1, entries);
+        ArrayAdapter<String> adptr = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, entries);
         lv.setAdapter(adptr);
 
         lv.setOnTouchListener(new OnSwipeTouchListener() {
-				public void onSwipeLeft(MotionEvent ev) {
-					changeDay(addDays(time, -1));
+                public void onSwipeLeft(MotionEvent ev) {
+                    changeDay(addDays(time, -1));
 
-				}
+                }
 
-				public void onSwipeRight(MotionEvent ev) {
-					changeDay(addDays(time, 1));
-				}
+                public void onSwipeRight(MotionEvent ev) {
+                    changeDay(addDays(time, 1));
+                }
             });
     }
 

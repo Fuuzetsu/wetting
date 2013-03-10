@@ -123,7 +123,6 @@ public class AddActivity extends Activity {
         Gson g = new Gson();
         String j = g.toJson(aoe);
 
-
         drinks.add("test1");
         drinks.add("test2");
 
@@ -131,16 +130,16 @@ public class AddActivity extends Activity {
             Either<Drink, Toilet> v = entry.getValue();
 
             if (v.isLeft()) {
-				String s = v.getLeft().getName();
-				if (!drinks.contains(s))
-					drinks.add(s);
-			}
+                String s = v.getLeft().getName();
+                if (!drinks.contains(s))
+                    drinks.add(s);
+            }
         }
 
 
         final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
 
-        ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_spinner_item, this.drinks);
+        ArrayAdapter<String> adptr = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, this.drinks);
         drinkSpinner.setAdapter(adptr);
 
         /* Disable the appropriate items */
