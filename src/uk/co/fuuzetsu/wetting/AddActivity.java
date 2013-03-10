@@ -43,7 +43,7 @@ public class AddActivity extends Activity {
         Log.d(TAG, "drink: " + drink);
         Log.d(TAG, "fizzy " + b.toString());
 
-        String dName =  drinkInput.isEnabled() ? drink : spin;
+        String dName = "".equals(drink) ? spin : drink;
 
         saveValue(new Either<Drink, Toilet>(new Drink(dName, b), true));
     }
@@ -136,49 +136,5 @@ public class AddActivity extends Activity {
 
         ArrayAdapter<String> adptr = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, this.drinks);
         drinkSpinner.setAdapter(adptr);
-
-        /* Disable the appropriate items */
-        final Button save = (Button) findViewById(R.id.buttonSaveDrink);
-        final CheckBox fizzyCheck = (CheckBox) findViewById(R.id.fizzyCheckbox);
-        final EditText drinkInput = (EditText) findViewById(R.id.newDrinkTextbox);
-
-
-        Log.d(TAG, "In after last init");
-
-        drinkSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parentView,
-                                           View           selectedItemView,
-                                           int            position,
-                                           long           id) {
-                    Boolean x = drinkSpinner == null;
-                    String drinkSpinnerTV = drinkSpinner.getSelectedItem().toString();
-                    Log.d(TAG, "before test");
-                    if (drinkSpinnerTV == null || drinkSpinnerTV.length() == 0) {
-                        drinkInput.setEnabled(true);
-                        drinkSpinner.setEnabled(true);
-                        fizzyCheck.setEnabled(false);
-                    }
-                    else {
-                        drinkInput.setEnabled(false);
-                        drinkSpinner.setEnabled(true);
-                        save.setEnabled(true);
-                    }
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parentView) {}
-
-            });
-
-        drinkInput.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void afterTextChanged(Editable s) {
-
-                }
-
-                public void beforeTextChanged(CharSequence s, int start, int count, int after){}
-                public void onTextChanged(CharSequence s, int start, int before, int count){}
-            });
     }
 }
