@@ -28,7 +28,6 @@ public class EntryActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entry);
-
     }
 
     @Override
@@ -46,7 +45,6 @@ public class EntryActivity extends Activity {
     }
 
     public void changeDay(final Date time) {
-
         TextView tv = (TextView) findViewById(R.id.dateLabel);
 
         SimpleDateFormat df = new SimpleDateFormat("dd MMMM yyyy");
@@ -116,5 +114,4 @@ public class EntryActivity extends Activity {
         }
         return d;
     }
-
 }
