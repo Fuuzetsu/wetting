@@ -7,7 +7,7 @@ import android.view.*;
 import android.widget.*;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.*;
 
 import com.google.gson.Gson;
 
@@ -26,11 +26,27 @@ public class EntryActivity extends Activity {
 
 
 		Calendar c = Calendar.getInstance();
-
+		SimpleDateFormat dfDate_day= new SimpleDateFormat("dd MMMM yyyy");
 		tv.setText(dfDate_day.format(c.getTime()));
+
+		List<String> entries = populateList(this.diary);
 
     }
 
+	public List<String> populateList(DrinkDiary d) {
+		SimpleDateFormat df= new SimpleDateFormat("dd MMMM yyyy");
+		List<String> l = new ArrayList<String>();
+
+		for (Map.Entry<Long, Either<Drink, Toilet>> entry : d.entrySet()) {
+			Long dt = entry.getKey();
+			String date = df.format(new Date(dt));
+			Either<Drink, Toilet> v = entry.getValue();
+			if (v.isLeft())
+				l.add(date + " | " + v.getLeft().getName());
+			else
+				l.add(date + " | Toilet");
+		}
+	}
 
 	public DrinkDiary loadDiary() {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
