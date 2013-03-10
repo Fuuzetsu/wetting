@@ -47,9 +47,30 @@ public class EntryActivity extends Activity {
         ListView lv = (ListView) findViewById(R.id.entryList);
         ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_list_item_1, entries);
         lv.setAdapter(adptr);
+
+		lv.setOnTouchListener(new OnSwipeTouchListener() {
+				public void onSwipeTop() {}
+				public void onSwipeBottom() {}
+
+				public void onSwipeRight() {
+					changeDay(addDays(time, 1));
+				}
+				public void onSwipeLeft() {
+					changeDay(addDays(time, -1));
+				}
+
+			});
+	}
+
+
+	public Date addDays(Date date, int days) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, days);
+        return cal.getTime();
     }
 
-    public List<String> populateList(DrinkDiary d, Date time) {
+	public List<String> populateList(DrinkDiary d, Date time) {
         SimpleDateFormat df = new SimpleDateFormat("HH:mm");
         SimpleDateFormat dayFormat = new SimpleDateFormat("dd/MM/yyyy");
         List<String> l = new ArrayList<String>();
