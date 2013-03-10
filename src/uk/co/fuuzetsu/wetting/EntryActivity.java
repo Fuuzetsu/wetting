@@ -31,9 +31,17 @@ public class EntryActivity extends Activity {
         Calendar c = Calendar.getInstance();
         Date time = new Date(c.getTimeInMillis());
         changeDay(time);
+
+
+        ListView lv = (ListView) findViewById(R.id.entryList);
+		lv.setOnTouchListener(new OnSwipeTouchListener() {
+				public void onTouch(MotionEvent event) {
+					Log.d(TAG, "Touched");
+				}
+			});
     }
 
-    public void changeDay(Date time) {
+    public void changeDay(final Date time) {
 
         TextView tv = (TextView) findViewById(R.id.dateLabel);
 
@@ -48,20 +56,7 @@ public class EntryActivity extends Activity {
         ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_list_item_1, entries);
         lv.setAdapter(adptr);
 
-		lv.setOnTouchListener(new OnSwipeTouchListener() {
-				public void onSwipeTop() {}
-				public void onSwipeBottom() {}
-
-				public void onSwipeRight() {
-					changeDay(addDays(time, 1));
-				}
-				public void onSwipeLeft() {
-					changeDay(addDays(time, -1));
-				}
-
-			});
 	}
-
 
 	public Date addDays(Date date, int days) {
         Calendar cal = Calendar.getInstance();
