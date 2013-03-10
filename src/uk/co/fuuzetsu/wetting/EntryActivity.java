@@ -82,20 +82,15 @@ public class EntryActivity extends Activity {
         SimpleDateFormat dayFormat = new SimpleDateFormat("dd/MM/yyyy");
         List<String> l = new ArrayList<String>();
 
-        for (Map.Entry<Long, Either<Drink, Toilet>> entry : d.getActivities().entrySet()) {
+        for (Map.Entry<Long, Event> entry : d.getActivities().entrySet()) {
             Long dt = entry.getKey();
             String date = df.format(new Date(dt));
             String dateDay = dayFormat.format(new Date(dt));
             Log.v(TAG, "date: " + date);
             Log.v(TAG, "dateDay: " + dateDay);
 
-            if (dayFormat.format(time).equals(dateDay)) {
-                Either<Drink, Toilet> v = entry.getValue();
-                if (v.isLeft())
-                    l.add(date + " | " + v.getLeft().getName());
-                else
-                    l.add(date + " | Toilet");
-            }
+            if (dayFormat.format(time).equals(dateDay))
+                l.add(entry.getValue().toString());
         }
 
         return l;

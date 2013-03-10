@@ -45,17 +45,17 @@ public class AddActivity extends Activity {
 
         String dName = "".equals(drink) ? spin : drink;
 
-        saveValue(new Either<Drink, Toilet>(new Drink(dName, b), true));
+        saveValue(new Drink(dName, b));
     }
 
-    public void saveValue(Either<Drink, Toilet> edt) {
+    public void saveValue(Event ev) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         final DrinkDiary diary = this.diary;
 
         Calendar c = Calendar.getInstance();
         Long time = c.getTimeInMillis();
 
-        diary.getActivities().put(time, edt);
+        diary.getActivities().put(time, ev);
 
         final AddActivity that = this;
 
@@ -96,9 +96,7 @@ public class AddActivity extends Activity {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         final DrinkDiary diary = this.diary;
 
-        Either<Drink, Toilet> t = new Either<Drink, Toilet>(new Toilet());
-
-        saveValue(t);
+        saveValue(new Toilet());
     }
 
     @Override
@@ -121,14 +119,13 @@ public class AddActivity extends Activity {
         drinks.add("test1");
         drinks.add("test2");
 
-        for (Map.Entry<Long, Either<Drink, Toilet>> entry : this.diary.getActivities().entrySet()) {
-            Either<Drink, Toilet> v = entry.getValue();
+        for (Map.Entry<Long, Event> entry : this.diary.getActivities().entrySet()) {
+            Event v = entry.getValue();
 
-            if (v.isLeft()) {
-                String s = v.getLeft().getName();
-                if (!drinks.contains(s))
-                    drinks.add(s);
-            }
+            try {
+                String d = ((Drink) v).getName();
+                if (!drinks.contains(d)) drinks.add(d);
+            } catch (ClassCastException e) { }
         }
 
 

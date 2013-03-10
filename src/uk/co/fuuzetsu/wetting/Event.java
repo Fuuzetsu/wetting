@@ -13,9 +13,9 @@ public abstract class Event {
         Calendar c = Calendar.getInstance();
 
         c.setTime(time);
-        c.set(Calendar.HOUR, 0);
-        c.set(Calendar.MINUTE, 0);
-        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.HOUR,        0);
+        c.set(Calendar.MINUTE,      0);
+        c.set(Calendar.SECOND,      0);
         c.set(Calendar.MILLISECOND, 0);
 
         this.day = c.getTime();
@@ -27,5 +27,10 @@ public abstract class Event {
 
     public static Event fromEither(Either<Drink, Toilet> edt) {
         return edt.isLeft() ? edt.getLeft() : edt.getRight();
+    }
+
+    @Override
+    public String toString() {
+        return (new java.text.SimpleDateFormat("'['hh:mm']' ")).format(time) + name;
     }
 }
