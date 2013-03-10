@@ -34,7 +34,7 @@ public class AddActivity extends Activity {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String json = prefs.getString(KEY, "");
 		if (KEY.length() == 0) {
-			this.diary = DrinkDiary();
+			this.diary = new DrinkDiary();
 		}
 		else {
 			Gson gson = new Gson();
