@@ -45,7 +45,7 @@ public class EntryActivity extends Activity {
     }
 
 	public List<String> populateList(DrinkDiary d) {
-		SimpleDateFormat df= new SimpleDateFormat("dd MMMM yyyy");
+		SimpleDateFormat df= new SimpleDateFormat("dd/mm/yyyy");
 		List<String> l = new ArrayList<String>();
 
 		for (Map.Entry<Long, Either<Drink, Toilet>> entry : d.getActivities().entrySet()) {
