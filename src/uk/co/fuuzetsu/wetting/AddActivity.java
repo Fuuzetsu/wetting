@@ -17,13 +17,19 @@ import java.util.*;
 import java.text.*;
 
 public class AddActivity extends Activity {
-
     private final String TAG = "AddActivity";
     private final String KEY = "DIARY";
     private DrinkDiary diary;
     private List<String> drinks = new ArrayList<String>();
 
     protected Thread th;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        th = null;
+    }
 
     public void saveDrink(View view) {
         final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
@@ -40,7 +46,6 @@ public class AddActivity extends Activity {
         String dName =  drinkInput.isEnabled() ? drink : spin;
 
         saveValue(new Either<Drink, Toilet>(new Drink(dName, b), true));
-
     }
 
     public void saveValue(Either<Drink, Toilet> edt) {
@@ -60,13 +65,8 @@ public class AddActivity extends Activity {
                     Log.d(TAG, "starting serlisation");
 
                     if (that.th != null) {
-                        Log.d(TAG, "waiting for other thread");
-
-                        try {
-                            that.th.join();
-                        } catch (InterruptedException e) {
-                            // Don't know what happened'
-                        }
+                        Log.d(TAG, "already writing; not writing again");
+                        return;
                     }
 
                     that.th = this;
@@ -84,6 +84,10 @@ public class AddActivity extends Activity {
                     that.th = null;
                 }
             };
+
+        ((Button) findViewById(R.id.buttonSaveDrink)).setEnabled(false);
+        ((Button) findViewById(R.id.buttonToilet)).setEnabled(false);
+
         th.start();
     }
 
