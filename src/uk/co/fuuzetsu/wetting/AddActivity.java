@@ -41,10 +41,19 @@ public class AddActivity extends Activity {
 			this.diary = gson.fromJson(json, DrinkDiary.class);
 		}
 
-		for (Map.Entry<Date, String> entry : this.diary.getActivities().entrySet()) {
-			String drink = entry.getValue();
-			drinks.add(drink);
-		}
+		DrinkDiary aoe = new DrinkDiary();
+		Gson g = new Gson();
+		String j = g.toJson(aoe);
+		Log.d(TAG, "printing json");
+		Log.d(TAG, j);
+
+		Boolean b = this.diary == null;
+		Log.d(TAG, "Is diary null?: " + b.toString());
+
+		// for (Map.Entry<Date, String> entry : this.diary.getActivities().entrySet()) {
+		// 	String drink = entry.getValue();
+		// 	drinks.add(drink);
+		// }
 		drinks.add("test1");
 		drinks.add("test2");
 
