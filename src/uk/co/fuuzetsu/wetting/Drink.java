@@ -1,20 +1,16 @@
 package uk.co.fuuzetsu.wetting;
 
-public class Drink {
-	Boolean fizzy;
-	String name;
+public class Drink extends Event {
+    protected boolean fizzy;
+    public boolean isFizzy() { return fizzy; }
 
-	public Drink(String name, Boolean fizzy) {
-		this.fizzy = fizzy;
-		this.name = name;
-	}
+    public Drink(String name, boolean fizzy) {
+        this(name, java.util.Calendar.getInstance().getTime(), fizzy);
+    }
 
-	public Boolean isFizzy() {
-		return this.fizzy;
-	}
+    public Drink(String name, java.util.Date time, boolean fizzy) {
+        super(name, time);
 
-	public String getName() {
-		return this.name;
-	}
-
+        this.fizzy = fizzy;
+    }
 }

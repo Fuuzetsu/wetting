@@ -154,7 +154,10 @@ public class AddActivity extends Activity {
 
         drinkSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
                 @Override
-                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                public void onItemSelected(AdapterView<?> parentView,
+                                           View           selectedItemView,
+                                           int            position,
+                                           long           id) {
                     Boolean x = drinkSpinner == null;
                     String drinkSpinnerTV = drinkSpinner.getSelectedItem().toString();
                     Log.d(TAG, "before test");
@@ -203,7 +206,5 @@ public class AddActivity extends Activity {
                 public void beforeTextChanged(CharSequence s, int start, int count, int after){}
                 public void onTextChanged(CharSequence s, int start, int before, int count){}
             });
-
-
     }
 }

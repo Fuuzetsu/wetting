@@ -97,21 +97,17 @@ public class EntryActivity extends Activity {
                     l.add(date + " | Toilet");
             }
         }
+
         return l;
     }
 
     public DrinkDiary loadDiary() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        DrinkDiary d;
-        String json = prefs.getString(KEY, "");
-        if (json.length() == 0) {
-            d = new DrinkDiary();
-        }
-        else {
-            Gson gson = new Gson();
-            Log.d(TAG, "json des:\n" + json);
-            d = gson.fromJson(json, DrinkDiary.class);
-        }
-        return d;
+        String json = PreferenceManager
+            .getDefaultSharedPreferences(this)
+            .getString(KEY, "");
+
+        return "".equals(json)
+            ? new DrinkDiary()
+            : (new Gson()).fromJson(json, DrinkDiary.class);
     }
 }
