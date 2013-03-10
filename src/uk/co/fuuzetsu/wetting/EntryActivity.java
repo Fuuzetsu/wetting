@@ -9,21 +9,42 @@ import android.widget.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import com.google.gson.Gson;
+
 public class EntryActivity extends Activity {
+	private final String KEY = "DIARY";
+	private DrinkDiary diary;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entry);
 
+		this.diary = loadDiary();
+
 		TextView tv = (TextView) findViewById(R.id.dateLabel);
 
-		SimpleDateFormat dfDate_day= new SimpleDateFormat("dd MMMM yyyy");
 
 		Calendar c = Calendar.getInstance();
 
 		tv.setText(dfDate_day.format(c.getTime()));
 
     }
+
+
+	public DrinkDiary loadDiary() {
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		DrinkDiary d;
+		String json = prefs.getString(KEY, "");
+		if (json.length() == 0) {
+			d = new DrinkDiary();
+		}
+		else {
+			Gson gson = new Gson();
+			Log.d(TAG, "json des:\n" + json);
+			d = gson.fromJson(json, DrinkDiary.class);
+		}
+		return d;
+	}
 
 }
