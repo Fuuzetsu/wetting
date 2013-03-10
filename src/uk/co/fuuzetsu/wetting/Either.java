@@ -6,7 +6,8 @@ public class Either<L, R> {
 	Boolean isLeft;
 
 
-	public Either(L left) {
+	/* We use the useless tag to prevent type erasure */
+	public Either(L left, Boolean tag) {
 		this.left = left;
 		isLeft = true;
 	}
