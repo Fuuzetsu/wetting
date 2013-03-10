@@ -4,21 +4,21 @@ import java.util.*;
 
 public class DrinkDiary {
 
-	Map<Date, Either<Drink, Toilet>> activities;
+	Map<Long, Either<Drink, Toilet>> activities;
 
 	public DrinkDiary() {
-		this.activities = new HashMap<Date, Either<Drink, Toilet>>();
+		this.activities = new HashMap<Long, Either<Drink, Toilet>>();
 	}
 
-	public DrinkDiary(Map<Date, Either<Drink, Toilet>> m) {
+	public DrinkDiary(Map<Long, Either<Drink, Toilet>> m) {
 		this.activities = m;
 	}
 
-	public void setActivities(Map<Date, Either<Drink, Toilet>> m) {
+	public void setActivities(Map<Long, Either<Drink, Toilet>> m) {
 		this.activities = m;
 	}
 
-	public Map<Date, Either<Drink, Toilet>> getActivities() {
+	public Map<Long, Either<Drink, Toilet>> getActivities() {
 		return this.activities;
 	}
 }

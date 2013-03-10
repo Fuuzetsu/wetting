@@ -24,26 +24,77 @@ public class AddActivity extends Activity {
 	private List<String> drinks = new ArrayList<String>();
 
 	public void saveDrink(View view) {
-		Log.d(TAG, "pressed save");
 		final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
 		final CheckBox fizzyCheck = (CheckBox) findViewById(R.id.fizzyCheckbox);
 		final EditText drinkInput = (EditText) findViewById(R.id.newDrinkTextbox);
-		Log.d(TAG, "Dumping values");
+
 		String spin = drinkSpinner.getSelectedItem().toString();
-		String drink = drinkInput.toString();
+		String drink = drinkInput.getText().toString();
 		Boolean b = fizzyCheck.isChecked();
 		Log.d(TAG, "spin: " + spin);
 		Log.d(TAG, "drink: " + drink);
 		Log.d(TAG, "fizzy " + b.toString());
 
-		Calendar c = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-		Log.d(TAG, sdf.format(c.getTime()));
+		String dName =  drinkInput.isEnabled() ? drink : spin;
 
+		saveValue(new Either<Drink, Toilet>(new Drink(dName, b), true));
+
+	}
+
+	public void saveValue(Either<Drink, Toilet> edt) {
+		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		final DrinkDiary diary = this.diary;
+
+		Calendar c = Calendar.getInstance();
+		Long time = c.getTimeInMillis();
+
+		Either<Drink, Toilet> t = edt;
+		diary.getActivities().put(time, t);
+
+		Thread th = new Thread() {
+				public void run() {
+					Gson g = new Gson();
+					Log.d(TAG, "starting serlisation");
+					String j = g.toJson(diary);
+					Log.d(TAG, j);
+					SharedPreferences.Editor editor = prefs.edit();
+					editor.putString(KEY, j);
+					editor.commit();
+
+					Log.d(TAG, "done editor commiting");
+				}
+			};
+		th.start();
 	}
 
 	public void saveToilet(View view) {
 		Log.d(TAG, "pressed Toilet");
+
+		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		final DrinkDiary diary = this.diary;
+
+		Calendar c = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		Long time = c.getTimeInMillis();
+		Log.d(TAG, sdf.format(time));
+
+		Either<Drink, Toilet> t = new Either<Drink, Toilet>(new Toilet());
+		diary.getActivities().put(time, t);
+
+		Thread th = new Thread() {
+				public void run() {
+					Gson g = new Gson();
+					Log.d(TAG, "starting serlisation");
+					String j = g.toJson(diary);
+					Log.d(TAG, j);
+					SharedPreferences.Editor editor = prefs.edit();
+					editor.putString(KEY, j);
+					editor.commit();
+
+					Log.d(TAG, "done editor commiting");
+				}
+			};
+		th.start();
 	}
 
     @Override
@@ -59,6 +110,7 @@ public class AddActivity extends Activity {
 		}
 		else {
 			Gson gson = new Gson();
+			Log.d(TAG, "json des:\n" + json);
 			this.diary = gson.fromJson(json, DrinkDiary.class);
 		}
 
@@ -66,7 +118,7 @@ public class AddActivity extends Activity {
 		Gson g = new Gson();
 		String j = g.toJson(aoe);
 
-		for (Map.Entry<Date, Either<Drink, Toilet>> entry : this.diary.getActivities().entrySet()) {
+		for (Map.Entry<Long, Either<Drink, Toilet>> entry : this.diary.getActivities().entrySet()) {
 			Either<Drink, Toilet> v = entry.getValue();
 
 			if (v.isLeft())
