@@ -50,7 +50,7 @@ public class EntryActivity extends Activity {
     }
 
     public List<String> populateList(DrinkDiary d, Date time) {
-        SimpleDateFormat df = new SimpleDateFormat("HH:MM");
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm");
         SimpleDateFormat dayFormat = new SimpleDateFormat("dd/MM/yyyy");
         List<String> l = new ArrayList<String>();
 
