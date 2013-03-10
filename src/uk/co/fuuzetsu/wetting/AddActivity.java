@@ -91,11 +91,6 @@ public class AddActivity extends Activity {
     }
 
     public void saveToilet(View view) {
-        Log.d(TAG, "pressed Toilet");
-
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        final DrinkDiary diary = this.diary;
-
         saveValue(new Toilet());
     }
 
@@ -112,22 +107,18 @@ public class AddActivity extends Activity {
             ? new DrinkDiary()
             : (new Gson()).fromJson(json, DrinkDiary.class);
 
-        DrinkDiary aoe = new DrinkDiary();
-        Gson g = new Gson();
-        String j = g.toJson(aoe);
-
         drinks.add("test1");
         drinks.add("test2");
 
-        for (Map.Entry<Long, Event> entry : this.diary.getActivities().entrySet()) {
+        for (Map.Entry<Long, Event> entry : diary.getActivities().entrySet()) {
             Event v = entry.getValue();
 
             try {
+                Log.d(TAG, "Entry found: " + v.toString());
                 String d = ((Drink) v).getName();
                 if (!drinks.contains(d)) drinks.add(d);
             } catch (ClassCastException e) { }
         }
-
 
         final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
 

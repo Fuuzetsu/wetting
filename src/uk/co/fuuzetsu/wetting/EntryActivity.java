@@ -61,7 +61,6 @@ public class EntryActivity extends Activity {
         lv.setOnTouchListener(new OnSwipeTouchListener() {
                 public void onSwipeLeft(MotionEvent ev) {
                     changeDay(addDays(time, -1));
-
                 }
 
                 public void onSwipeRight(MotionEvent ev) {
