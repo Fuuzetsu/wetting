@@ -38,6 +38,10 @@ public class EntryActivity extends Activity {
 
 		List<String> entries = populateList(this.diary);
 
+		ListView lv = (ListView) findViewById(R.id.entryList);
+		ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_list_item_1, entries);
+		lv.setAdapter(adptr);
+
     }
 
 	public List<String> populateList(DrinkDiary d) {
