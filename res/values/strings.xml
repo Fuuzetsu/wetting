@@ -9,9 +9,9 @@
     <string name="title_activity_display_message">Test message</string>
     <string name="title_activity_add_message">Add drink</string>
     <string name="title_activity_remove_message">Remove drink</string>
-    <string name="drink_name_label">Drink name</string>
-    <string name="old_drink_name_label">Recover deleted drink</string>
-    <string name="add_drink_hint">Enter a drink name</string>
+    <string name="drink_name_label">Or, enter a new drink:</string>
+    <string name="old_drink_name_label">Choose drink:</string>
+    <string name="add_drink_hint">Type a drink name</string>
     <string name="fizzy_text_label">This drink is fizzy</string>
     <string name="button_save">Save</string>
     <string name="title_activity_entry">EntryActivity</string>

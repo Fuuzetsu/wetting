@@ -55,8 +55,7 @@ public class AddActivity extends Activity {
         Calendar c = Calendar.getInstance();
         Long time = c.getTimeInMillis();
 
-        Either<Drink, Toilet> t = edt;
-        diary.getActivities().put(time, t);
+        diary.getActivities().put(time, edt);
 
         final AddActivity that = this;
 
@@ -108,16 +107,12 @@ public class AddActivity extends Activity {
         setContentView(R.layout.add);
 
         /* Initialise diary, populate list */
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String json = prefs.getString(KEY, "");
-        if (json.length() == 0) {
-            this.diary = new DrinkDiary();
-        }
-        else {
-            Gson gson = new Gson();
-            Log.d(TAG, "json des:\n" + json);
-            this.diary = gson.fromJson(json, DrinkDiary.class);
-        }
+        String json = PreferenceManager.getDefaultSharedPreferences(this)
+                                       .getString(KEY, "");
+
+        diary = "".equals(json)
+            ? new DrinkDiary()
+            : (new Gson()).fromJson(json, DrinkDiary.class);
 
         DrinkDiary aoe = new DrinkDiary();
         Gson g = new Gson();
@@ -145,8 +140,6 @@ public class AddActivity extends Activity {
         /* Disable the appropriate items */
         final Button save = (Button) findViewById(R.id.buttonSaveDrink);
         final CheckBox fizzyCheck = (CheckBox) findViewById(R.id.fizzyCheckbox);
-        save.setEnabled(false);
-
         final EditText drinkInput = (EditText) findViewById(R.id.newDrinkTextbox);
 
 
@@ -164,14 +157,12 @@ public class AddActivity extends Activity {
                     if (drinkSpinnerTV == null || drinkSpinnerTV.length() == 0) {
                         drinkInput.setEnabled(true);
                         drinkSpinner.setEnabled(true);
-                        save.setEnabled(false);
                         fizzyCheck.setEnabled(false);
                     }
                     else {
                         drinkInput.setEnabled(false);
                         drinkSpinner.setEnabled(true);
                         save.setEnabled(true);
-                        fizzyCheck.setEnabled(true);
                     }
                 }
 
@@ -183,24 +174,7 @@ public class AddActivity extends Activity {
         drinkInput.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void afterTextChanged(Editable s) {
-                    if (drinkInput.length() == 0) {
-                        TextView drinkSpinnerTV = (TextView) drinkSpinner.getSelectedItem();
-                        if (drinkSpinnerTV == null || drinkSpinnerTV.toString().length() == 0) {
-                            drinkInput.setEnabled(true);
-                            drinkSpinner.setEnabled(true);
-                            save.setEnabled(false);
-                            fizzyCheck.setEnabled(false);
-                        }
-                        else {
-                            drinkSpinner.setEnabled(false);
-                            save.setEnabled(true);
-                            fizzyCheck.setEnabled(true);
-                        }
-                    }
-                    else {
-                        drinkSpinner.setEnabled(false);
-                        save.setEnabled(true);
-                    }
+
                 }
 
                 public void beforeTextChanged(CharSequence s, int start, int count, int after){}

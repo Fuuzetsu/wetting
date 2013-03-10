@@ -8,6 +8,26 @@
     >
 
     <TextView
+        a:id="@+id/oldDrinkNameLabel"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:text="@string/old_drink_name_label"
+        a:layout_centerHorizontal="true"
+        a:textSize="25sp"
+        a:textStyle="bold"
+        a:layout_weight="1"
+        />
+
+    <Spinner
+        a:id="@+id/oldDrinkSpinner"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_centerHorizontal="true"
+        a:textSize="15sp"
+        a:layout_weight="1"
+        />
+
+    <TextView
         a:id="@+id/drinkNameLabel"
         a:layout_width="fill_parent"
         a:layout_height="wrap_content"
@@ -24,26 +44,6 @@
         a:layout_width="fill_parent"
         a:layout_height="wrap_content"
         a:hint="@string/add_drink_hint"
-        a:layout_centerHorizontal="true"
-        a:textSize="15sp"
-        a:layout_weight="1"
-        />
-
-    <TextView
-        a:id="@+id/oldDrinkNameLabell"
-        a:layout_width="fill_parent"
-        a:layout_height="wrap_content"
-        a:text="@string/old_drink_name_label"
-        a:layout_centerHorizontal="true"
-        a:textSize="25sp"
-        a:textStyle="bold"
-        a:layout_weight="1"
-        />
-
-    <Spinner
-        a:id="@+id/oldDrinkSpinner"
-        a:layout_width="fill_parent"
-        a:layout_height="wrap_content"
         a:layout_centerHorizontal="true"
         a:textSize="15sp"
         a:layout_weight="1"
