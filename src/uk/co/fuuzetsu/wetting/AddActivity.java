@@ -23,6 +23,8 @@ public class AddActivity extends Activity {
     private DrinkDiary diary;
     private List<String> drinks = new ArrayList<String>();
 
+    protected Thread th;
+
     public void saveDrink(View view) {
         final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
         final CheckBox fizzyCheck = (CheckBox) findViewById(R.id.fizzyCheckbox);
@@ -55,16 +57,31 @@ public class AddActivity extends Activity {
 
         Thread th = new Thread() {
                 public void run() {
-                    Gson g = new Gson();
                     Log.d(TAG, "starting serlisation");
-                    String j = g.toJson(diary);
+
+                    if (that.th != null) {
+                        Log.d(TAG, "waiting for other thread");
+
+                        try {
+                            that.th.join();
+                        } catch (InterruptedException e) {
+                            // Don't know what happened'
+                        }
+                    }
+
+                    that.th = this;
+
+                    String j = (new Gson()).toJson(diary);
                     Log.d(TAG, j);
+
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putString(KEY, j);
                     editor.commit();
 
                     Log.d(TAG, "done editor commiting");
                     that.finish();
+
+                    that.th = null;
                 }
             };
         th.start();
