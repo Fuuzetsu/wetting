@@ -33,6 +33,10 @@ public class EntryActivity extends Activity {
         changeDay(time);
     }
 
+    public void onButtonPlusClick(View v) {
+        startActivity(new Intent(this, AddActivity.class));
+    }
+
     public void changeDay(Date time) {
 
         TextView tv = (TextView) findViewById(R.id.dateLabel);

@@ -31,7 +31,8 @@
             a:layout_centerHorizontal="true"
             a:textSize="30sp"
             a:textStyle="bold"
-            a:layout_weight="1" />
+            a:layout_weight="1"
+            a:onClick="onButtonPlusClick" />
     </LinearLayout>
 
     <ListView
@@ -53,19 +54,14 @@
         <CheckBox
             a:id="@+id/wetBed"
             a:layout_width="wrap_content"
-            a:layout_height="wrap_content"
-            a:layout_centerHorizontal="true"
-            a:layout_marginTop="10dip"
-            a:layout_weight="1" />
+            a:layout_height="wrap_content" />
 
         <TextView
             a:id="@+id/wetLabel"
             a:layout_width="wrap_content"
             a:layout_height="wrap_content"
-            a:layout_weight="4"
             a:text="@string/wet_text"
             a:textSize="30sp"
-            a:textStyle="bold"
-            a:gravity="center" />
+            a:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

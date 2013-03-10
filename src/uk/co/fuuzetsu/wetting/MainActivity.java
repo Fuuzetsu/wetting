@@ -10,37 +10,26 @@ import android.widget.*;
 public class MainActivity extends Activity
 {
 
-	public static final String EXTRA_MESSAGE = "MAIN_MSG";
+    public static final String EXTRA_MESSAGE = "MAIN_MSG";
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
     }
 
-	public void showDayButtonMessage(View view) {
-		Intent intent = new Intent(this, DisplayMessageActivity.class);
-		String message = "Activated Show day button";
-		intent.putExtra(MainActivity.EXTRA_MESSAGE, message);
-		startActivity(intent);
-	}
+    public void showDayButtonMessage(View view) {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        intent.putExtra(MainActivity.EXTRA_MESSAGE, "Activated Show Day button");
+        startActivity(intent);
+    }
 
-	public void showAddScreen(View view) {
-		Intent intent = new Intent(this, AddActivity.class);
+    public void showRemoveScreen(View view) {
+        startActivity(new Intent(this, RemoveActivity.class));
+    }
 
-		startActivity(intent);
-	}
-
-	public void showRemoveScreen(View view) {
-		Intent intent = new Intent(this, RemoveActivity.class);
-
-		startActivity(intent);
-	}
-
-	public void changeToEntry(View view) {
-		Intent intent = new Intent(this, EntryActivity.class);
-		startActivity(intent);
-	}
+    public void changeToEntry(View view) {
+        startActivity(new Intent(this, EntryActivity.class));
+    }
 
 }
