@@ -18,7 +18,7 @@ public class AddActivity extends Activity {
 
 	private final String TAG = "AddActivity";
 	private final String KEY = "DIARY";
-	private DrinkDiary diary;
+	private DrinkDiary dairy;
 	private List<String> drinks = new ArrayList<String>();
 
 	public void saveDrink(View view) {
@@ -38,13 +38,16 @@ public class AddActivity extends Activity {
 		}
 		else {
 			Gson gson = new Gson();
-			this.diary = gson.fromJson(json, DrinkDiary.class);
+			this.diary = gson.fromJson(json, DrinkDairy.class);
 		}
 
-		for (Map.Entry<Date, String> entry : this.diary.getActivities().entrySet()) {
+		for (Map.Entry<Date, String> entry : this.dairy.getActivities().entrySet()) {
 			String drink = entry.getValue();
 			drinks.add(drink);
 		}
+		drinks.add("test1");
+		drinks.add("test2");
+
 		final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
 
 		ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_spinner_item, this.drinks);
