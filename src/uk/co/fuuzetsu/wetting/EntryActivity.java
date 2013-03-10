@@ -34,9 +34,10 @@ public class EntryActivity extends Activity {
 
 		Calendar c = Calendar.getInstance();
 		SimpleDateFormat dfDate_day= new SimpleDateFormat("dd MMMM yyyy");
-		tv.setText(dfDate_day.format(c.getTime()));
+		Date time = c.getTimeInMillis();
+		tv.setText(dfDate_day.format(time));
 
-		List<String> entries = populateList(this.diary);
+		List<String> entries = populateList(this.diary, time);
 
 		ListView lv = (ListView) findViewById(R.id.entryList);
 		ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_list_item_1, entries);
@@ -44,18 +45,22 @@ public class EntryActivity extends Activity {
 
     }
 
-	public List<String> populateList(DrinkDiary d) {
+	public List<String> populateList(DrinkDiary d, Date time) {
 		SimpleDateFormat df= new SimpleDateFormat("HH:MM");
+		SimpleDateFormat dayFormat = new SimpleDateFormat("dd/MM/yyyy");
 		List<String> l = new ArrayList<String>();
 
 		for (Map.Entry<Long, Either<Drink, Toilet>> entry : d.getActivities().entrySet()) {
 			Long dt = entry.getKey();
 			String date = df.format(new Date(dt));
-			Either<Drink, Toilet> v = entry.getValue();
-			if (v.isLeft())
-				l.add(date + " | " + v.getLeft().getName());
-			else
-				l.add(date + " | Toilet");
+			String dateDay = dayFormat(new Date(dt));
+			if (date.equals(dateDay)) {
+				Either<Drink, Toilet> v = entry.getValue();
+				if (v.isLeft())
+					l.add(date + " | " + v.getLeft().getName());
+				else
+					l.add(date + " | Toilet");
+			}
 		}
 		return l;
 	}
