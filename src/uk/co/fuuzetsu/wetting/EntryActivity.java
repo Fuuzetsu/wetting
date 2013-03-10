@@ -29,19 +29,12 @@ public class EntryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entry);
 
-        diary = loadDiary();
-        Calendar c = Calendar.getInstance();
-        Date time = new Date(c.getTimeInMillis());
-        changeDay(time);
-
         ListView lv = (ListView) findViewById(R.id.entryList);
-		lv.setOnTouchListener(new OnSwipeTouchListener() {
-				public void onTouch(MotionEvent event) {
-					Log.d(TAG, "Touched");
-				}
-
-			});
-        changeDay(new Date(Calendar.getInstance().getTimeInMillis()));
+        lv.setOnTouchListener(new OnSwipeTouchListener() {
+                public void onTouch(MotionEvent event) {
+                    Log.d(TAG, "Touched");
+                }
+            });
     }
 
     @Override
@@ -73,16 +66,16 @@ public class EntryActivity extends Activity {
         ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_list_item_1, entries);
         lv.setAdapter(adptr);
 
-	}
+    }
 
-	public Date addDays(Date date, int days) {
+    public Date addDays(Date date, int days) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         cal.add(Calendar.DATE, days);
         return cal.getTime();
     }
 
-	public List<String> populateList(DrinkDiary d, Date time) {
+    public List<String> populateList(DrinkDiary d, Date time) {
         SimpleDateFormat df = new SimpleDateFormat("HH:mm");
         SimpleDateFormat dayFormat = new SimpleDateFormat("dd/MM/yyyy");
         List<String> l = new ArrayList<String>();
