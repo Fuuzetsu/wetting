@@ -53,6 +53,7 @@ public class EntryActivity extends Activity {
 			else
 				l.add(date + " | Toilet");
 		}
+		return l;
 	}
 
 	public DrinkDiary loadDiary() {
