@@ -126,8 +126,11 @@ public class AddActivity extends Activity {
         for (Map.Entry<Long, Either<Drink, Toilet>> entry : this.diary.getActivities().entrySet()) {
             Either<Drink, Toilet> v = entry.getValue();
 
-            if (v.isLeft())
-                drinks.add(v.getLeft().getName());
+            if (v.isLeft()) {
+				String s = v.getLeft().getName();
+				if (!drinks.contains(s))
+					drinks.add(s);
+			}
         }
 
         drinks.add("test1");
