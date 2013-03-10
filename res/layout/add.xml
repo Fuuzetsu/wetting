@@ -1,116 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center"
+    xmlns:a="http://schemas.android.com/apk/res/android"
+    a:orientation="vertical"
+    a:layout_width="fill_parent"
+    a:layout_height="fill_parent"
+    a:gravity="center"
     >
 
     <TextView
-        android:id="@+id/drinkNameLabel"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/drink_name_label"
-        android:layout_centerHorizontal="true"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dip"
-        android:layout_weight="1"
+        a:id="@+id/drinkNameLabel"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:text="@string/drink_name_label"
+        a:layout_centerHorizontal="true"
+        a:textSize="25sp"
+        a:textStyle="bold"
+        a:layout_marginTop="10dip"
+        a:layout_weight="1"
         />
 
     <EditText
-        android:id="@+id/newDrinkTextbox"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/add_drink_hint"
-        android:layout_centerHorizontal="true"
-        android:textSize="15sp"
-        android:layout_weight="1"
+        a:id="@+id/newDrinkTextbox"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:hint="@string/add_drink_hint"
+        a:layout_centerHorizontal="true"
+        a:textSize="15sp"
+        a:layout_weight="1"
         />
 
     <TextView
-        android:id="@+id/oldDrinkNameLabell"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/old_drink_name_label"
-        android:layout_centerHorizontal="true"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_weight="1"
+        a:id="@+id/oldDrinkNameLabell"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:text="@string/old_drink_name_label"
+        a:layout_centerHorizontal="true"
+        a:textSize="25sp"
+        a:textStyle="bold"
+        a:layout_weight="1"
         />
 
     <Spinner
-        android:id="@+id/oldDrinkSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="15sp"
-        android:layout_weight="1"
+        a:id="@+id/oldDrinkSpinner"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_centerHorizontal="true"
+        a:textSize="15sp"
+        a:layout_weight="1"
         />
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
+        a:orientation="horizontal"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:gravity="center"
+        a:layout_weight="1"
         >
 
         <CheckBox
-            android:id="@+id/fizzyCheckbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            a:id="@+id/fizzyCheckbox"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_weight="1"
             />
 
         <TextView
-            android:id="@+id/fizzyLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fizzy_text_label"
-            android:layout_centerHorizontal="true"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_weight="3"
+            a:id="@+id/fizzyLabel"
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:text="@string/fizzy_text_label"
+            a:layout_centerHorizontal="true"
+            a:textSize="25sp"
+            a:textStyle="bold"
+            a:gravity="center"
+            a:layout_weight="3"
             />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
+        a:orientation="horizontal"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:gravity="center"
+        a:layout_weight="1"
         >
 
         <Button
-            android:id="@+id/buttonSaveDrink"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_save"
-            android:layout_marginTop="10dip"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            android:onClick="saveDrink"
+            a:id="@+id/buttonSaveDrink"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:text="@string/button_save"
+            a:layout_marginTop="10dip"
+            a:textSize="25sp"
+            a:textStyle="bold"
+            a:layout_weight="1"
+            a:onClick="saveDrink"
             />
 
         <Button
-            android:id="@+id/buttonToilet"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_toilet"
-            android:layout_marginTop="10dip"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            android:onClick="saveToilet"
+            a:id="@+id/buttonToilet"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:text="@string/button_toilet"
+            a:layout_marginTop="10dip"
+            a:textSize="25sp"
+            a:textStyle="bold"
+            a:layout_weight="1"
+            a:onClick="saveToilet"
             />
-
     </LinearLayout>
-
 </LinearLayout>
