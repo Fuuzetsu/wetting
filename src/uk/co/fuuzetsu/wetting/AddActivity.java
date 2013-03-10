@@ -18,7 +18,7 @@ public class AddActivity extends Activity {
 
 	private final String TAG = "AddActivity";
 	private final String KEY = "DIARY";
-	private DrinkDiary dairy;
+	private DrinkDiary diary;
 	private List<String> drinks = new ArrayList<String>();
 
 	public void saveDrink(View view) {
@@ -38,10 +38,10 @@ public class AddActivity extends Activity {
 		}
 		else {
 			Gson gson = new Gson();
-			this.diary = gson.fromJson(json, DrinkDairy.class);
+			this.diary = gson.fromJson(json, DrinkDiary.class);
 		}
 
-		for (Map.Entry<Date, String> entry : this.dairy.getActivities().entrySet()) {
+		for (Map.Entry<Date, String> entry : this.diary.getActivities().entrySet()) {
 			String drink = entry.getValue();
 			drinks.add(drink);
 		}
