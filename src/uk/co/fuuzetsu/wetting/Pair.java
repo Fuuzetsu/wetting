@@ -1,3 +1,5 @@
+package uk.co.fuuzetsu.wetting;
+
 public class Pair<L, R> {
 	L l;
 	R r;
