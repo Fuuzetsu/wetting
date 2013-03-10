@@ -9,6 +9,7 @@ import android.text.*;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
+import android.widget.AdapterView.*;
 
 import com.google.gson.Gson;
 
@@ -33,7 +34,7 @@ public class AddActivity extends Activity {
 		/* Initialise diary, populate list */
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String json = prefs.getString(KEY, "");
-		if (KEY.length() == 0) {
+		if (json.length() == 0) {
 			this.diary = new DrinkDiary();
 		}
 		else {
@@ -44,16 +45,14 @@ public class AddActivity extends Activity {
 		DrinkDiary aoe = new DrinkDiary();
 		Gson g = new Gson();
 		String j = g.toJson(aoe);
-		Log.d(TAG, "printing json");
-		Log.d(TAG, j);
 
-		Boolean b = this.diary == null;
-		Log.d(TAG, "Is diary null?: " + b.toString());
+		for (Map.Entry<Date, Either<Drink, Toilet>> entry : this.diary.getActivities().entrySet()) {
+			Either<Drink, Toilet> v = entry.getValue();
 
-		// for (Map.Entry<Date, String> entry : this.diary.getActivities().entrySet()) {
-		// 	String drink = entry.getValue();
-		// 	drinks.add(drink);
-		// }
+			if (v.isLeft())
+				drinks.add(v.getLeft().getName());
+		}
+
 		drinks.add("test1");
 		drinks.add("test2");
 
@@ -72,8 +71,32 @@ public class AddActivity extends Activity {
 
 		Log.d(TAG, "In after last init");
 
-		drinkInput.addTextChangedListener(new TextWatcher() {
+		drinkSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+				@Override
+				public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+					Boolean x = drinkSpinner == null;
+					String drinkSpinnerTV = drinkSpinner.getSelectedItem().toString();
+					Log.d(TAG, "before test");
+					if (drinkSpinnerTV == null || drinkSpinnerTV.length() == 0) {
+						drinkInput.setEnabled(true);
+						drinkSpinner.setEnabled(true);
+						save.setEnabled(false);
+						fizzyCheck.setEnabled(false);
+					}
+					else {
+						drinkInput.setEnabled(false);
+						drinkSpinner.setEnabled(true);
+						save.setEnabled(true);
+						fizzyCheck.setEnabled(true);
+					}
+				}
 
+				@Override
+				public void onNothingSelected(AdapterView<?> parentView) {}
+
+			});
+
+		drinkInput.addTextChangedListener(new TextWatcher() {
 				@Override
 				public void afterTextChanged(Editable s) {
 					if (drinkInput.length() == 0) {
