@@ -2,9 +2,15 @@ package uk.co.fuuzetsu.wetting;
 
 import android.app.*;
 import android.content.*;
+import android.util.*;
 import android.os.*;
+import android.preference.*;
+import android.text.*;
 import android.view.*;
+import android.view.View.*;
 import android.widget.*;
+import android.widget.AdapterView.*;
+
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -13,6 +19,7 @@ import com.google.gson.Gson;
 
 public class EntryActivity extends Activity {
 	private final String KEY = "DIARY";
+	private final String TAG = "EntryActivity";
 	private DrinkDiary diary;
 
     @Override
