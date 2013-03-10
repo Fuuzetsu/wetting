@@ -1,61 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center"
-    android:padding="12dip"
-    >
+    xmlns:a="http://schemas.android.com/apk/res/android"
+    a:orientation="vertical"
+    a:layout_width="fill_parent"
+    a:layout_height="fill_parent"
+    a:padding="12dip">
 
     <Button
-        android:id="@+id/ButtonShowDay"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_show_day"
-        android:layout_centerHorizontal="true"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_weight="1"
-        android:onClick="changeToEntry"
-        />
+        a:id="@+id/ButtonShowDay"
+        a:layout_width="fill_parent"
+        a:layout_height="0px"
+        a:text="@string/button_show_day"
+        a:layout_centerHorizontal="true"
+        a:textSize="25sp"
+        a:textStyle="bold"
+        a:layout_weight="1"
+        a:onClick="changeToEntry" />
+
+    <!--
+    <Button
+        a:id="@+id/ButtonRemoveDrink"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:text="@string/button_remove_drink"
+        a:layout_centerHorizontal="true"
+        a:layout_marginTop="10dip"
+        a:textSize="25sp"
+        a:textStyle="bold"
+        a:layout_weight="1"
+        a:onClick="showRemoveScreen" />
+    -->
 
     <Button
-        android:id="@+id/ButtonAddDrink"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_add_drink"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dip"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_weight="1"
-        android:onClick="showAddScreen"
-        />
-
-    <!-- <Button -->
-    <!--     android:id="@+id/ButtonRemoveDrink" -->
-    <!--     android:layout_width="fill_parent" -->
-    <!--     android:layout_height="wrap_content" -->
-    <!--     android:text="@string/button_remove_drink" -->
-    <!--     android:layout_centerHorizontal="true" -->
-    <!--     android:layout_marginTop="10dip" -->
-    <!--     android:textSize="25sp" -->
-    <!--     android:textStyle="bold" -->
-    <!--     android:layout_weight="1" -->
-    <!--     android:onClick="showRemoveScreen" -->
-    <!--     /> -->
-
-    <Button
-        android:id="@+id/ButtonCalculate"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_calculate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dip"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_weight="1"
-        />
-
+        a:id="@+id/ButtonCalculate"
+        a:layout_width="fill_parent"
+        a:layout_height="0px"
+        a:text="@string/button_calculate"
+        a:layout_centerHorizontal="true"
+        a:textSize="25sp"
+        a:textStyle="bold"
+        a:layout_weight="1" />
 </LinearLayout>

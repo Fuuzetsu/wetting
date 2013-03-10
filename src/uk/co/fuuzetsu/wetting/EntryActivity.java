@@ -15,6 +15,8 @@ import android.widget.AdapterView.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import android.graphics.Rect;
+
 import com.google.gson.Gson;
 
 public class EntryActivity extends Activity {
@@ -32,13 +34,27 @@ public class EntryActivity extends Activity {
         Date time = new Date(c.getTimeInMillis());
         changeDay(time);
 
-
         ListView lv = (ListView) findViewById(R.id.entryList);
 		lv.setOnTouchListener(new OnSwipeTouchListener() {
 				public void onTouch(MotionEvent event) {
 					Log.d(TAG, "Touched");
 				}
 			});
+        changeDay(new Date(Calendar.getInstance().getTimeInMillis()));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.d(TAG, "onResume");
+
+        diary = loadDiary();
+        changeDay(new Date(Calendar.getInstance().getTimeInMillis()));
+    }
+
+    public void onButtonPlusClick(View v) {
+        startActivity(new Intent(this, AddActivity.class));
     }
 
     public void changeDay(final Date time) {
