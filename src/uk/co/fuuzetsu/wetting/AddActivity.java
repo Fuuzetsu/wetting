@@ -14,6 +14,7 @@ import android.widget.AdapterView.*;
 import com.google.gson.Gson;
 
 import java.util.*;
+import java.text.*;
 
 public class AddActivity extends Activity {
 
@@ -23,7 +24,22 @@ public class AddActivity extends Activity {
 	private List<String> drinks = new ArrayList<String>();
 
 	public void saveDrink(View view) {
-		return;
+		Log.d(TAG, "pressed save");
+		final Spinner drinkSpinner = (Spinner) findViewById(R.id.oldDrinkSpinner);
+		final CheckBox fizzyCheck = (CheckBox) findViewById(R.id.fizzyCheckbox);
+		final EditText drinkInput = (EditText) findViewById(R.id.newDrinkTextbox);
+		Log.d(TAG, "Dumping values");
+		String spin = drinkSpinner.getSelectedItem().toString();
+		String drink = drinkInput.toString();
+		Boolean b = fizzyCheck.isChecked();
+		Log.d(TAG, "spin: " + spin);
+		Log.d(TAG, "drink: " + drink);
+		Log.d(TAG, "fizzy " + b.toString());
+
+		Calendar c = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		Log.d(TAG, sdf.format(c.getTime()));
+
 	}
 
     @Override
