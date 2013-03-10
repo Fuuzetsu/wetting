@@ -43,10 +43,12 @@ public class OnSwipeTouchListener implements OnTouchListener {
 						if (diffX > 0) {
 							Log.d(TAG, "diffX > 0");
 							Log.d(TAG, "diffX: " + diffX);
+							onSwipeLeft(e1);
 						}
 						else {
 							Log.d(TAG, "diffX < 0");
 							Log.d(TAG, "diffX: " + diffX);
+							onSwipeRight(e1);
 						}
 					}
 				}
@@ -63,6 +65,10 @@ public class OnSwipeTouchListener implements OnTouchListener {
 			return result;
 		}
 	}
-	public void onTouch(MotionEvent e) {
-	}
+
+	public void onSwipeLeft(MotionEvent e) {}
+
+	public void onSwipeRight(MotionEvent e) {}
+
+	public void onTouch(MotionEvent e) {}
 }

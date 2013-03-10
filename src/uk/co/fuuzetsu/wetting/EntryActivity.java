@@ -29,12 +29,6 @@ public class EntryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entry);
 
-        ListView lv = (ListView) findViewById(R.id.entryList);
-        lv.setOnTouchListener(new OnSwipeTouchListener() {
-                public void onTouch(MotionEvent event) {
-                    Log.d(TAG, "Touched");
-                }
-            });
     }
 
     @Override
@@ -66,6 +60,16 @@ public class EntryActivity extends Activity {
         ArrayAdapter adptr = new ArrayAdapter(this, android.R.layout.simple_list_item_1, entries);
         lv.setAdapter(adptr);
 
+        lv.setOnTouchListener(new OnSwipeTouchListener() {
+				public void onSwipeLeft(MotionEvent ev) {
+					changeDay(addDays(time, -1));
+
+				}
+
+				public void onSwipeRight(MotionEvent ev) {
+					changeDay(addDays(time, 1));
+				}
+            });
     }
 
     public Date addDays(Date date, int days) {
