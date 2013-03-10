@@ -1,5 +1,6 @@
 package uk.co.fuuzetsu.wetting;
 
+import android.util.*;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
@@ -8,6 +9,7 @@ import android.view.View.OnTouchListener;
 
 public class OnSwipeTouchListener implements OnTouchListener {
 
+	private final String TAG = "OnSwipeTouchListener";
 	private final GestureDetector gestureDetector = new GestureDetector(new GestureListener());
 
 	public boolean onTouch(final View v, final MotionEvent event) {
@@ -39,15 +41,25 @@ public class OnSwipeTouchListener implements OnTouchListener {
 				if (Math.abs(diffX) > Math.abs(diffY)) {
 					if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
 						if (diffX > 0) {
-						} else {
+							Log.d(TAG, "diffX > 0");
+							Log.d(TAG, "diffX: " + diffX);
+						}
+						else {
+							Log.d(TAG, "diffX < 0");
+							Log.d(TAG, "diffX: " + diffX);
 						}
 					}
-				} else {
-					// onTouch(e);
 				}
-			} catch (Exception exception) {
+				else {
+					Log.d(TAG, "diffX > diffY");
+					Log.d(TAG, "diffX: " + diffX);
+					Log.d(TAG, "diffY: " + diffY);
+				}
+			}
+			catch (Exception exception) {
 				exception.printStackTrace();
 			}
+			Log.d(TAG, "result: " + result);
 			return result;
 		}
 	}

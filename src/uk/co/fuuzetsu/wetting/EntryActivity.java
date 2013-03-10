@@ -39,6 +39,7 @@ public class EntryActivity extends Activity {
 				public void onTouch(MotionEvent event) {
 					Log.d(TAG, "Touched");
 				}
+
 			});
         changeDay(new Date(Calendar.getInstance().getTimeInMillis()));
     }
